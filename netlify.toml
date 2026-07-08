@@ -1,0 +1,8 @@
+[build]
+  # No build command needed - this is a static HTML site with pre-compiled assets
+  # This overrides any build command set in Netlify dashboard
+  # If you see "gulp build" errors, make sure this file is committed and deployed
+  command = "echo 'Static site - no build required'"
+  # Publish from the root directory where index.html and assets are located
+  publish = "."
+
