@@ -1,9 +1,9 @@
 /********** Template CSS **********/
 :root {
-    --primary: #FF800F;
-    --secondary: #001064;
-    --light: #F6F7F8;
-    --dark: #010A35;
+    --primary: #2E8B3A;
+    --secondary: #14532D;
+    --light: #F4F8F4;
+    --dark: #0B3D24;
 }
 
 .back-to-top {
@@ -19,6 +19,7 @@
 #spinner {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity .5s ease-out, visibility 0s linear .5s;
     z-index: 99999;
 }
@@ -27,6 +28,7 @@
     transition: opacity .5s ease-out, visibility 0s linear 0s;
     visibility: visible;
     opacity: 1;
+    pointer-events: all;
 }
 
 
@@ -67,6 +69,52 @@
     height: 48px;
 }
 
+.feature-icon {
+    width: 90px;
+    height: 90px;
+}
+
+.feature-media {
+    min-height: 400px;
+}
+
+.feature-media img {
+    object-fit: cover;
+}
+
+.section-title {
+    max-width: 500px;
+}
+
+.section-title-600 {
+    max-width: 600px;
+}
+
+.section-title-650 {
+    max-width: 650px;
+}
+
+.section-title-700 {
+    max-width: 700px;
+}
+
+.form-message {
+    height: 80px;
+}
+
+.form-message-lg {
+    height: 100px;
+}
+
+.contact-map {
+    min-height: 450px;
+}
+
+.contact-map iframe {
+    min-height: 450px;
+    border: 0;
+}
+
 .btn-square,
 .btn-sm-square,
 .btn-lg-square {
@@ -80,16 +128,36 @@
 
 /*** Navbar ***/
 .navbar.sticky-top {
-    top: -100px;
-    transition: .5s;
+    top: 0;
+    z-index: 1030;
+}
+
+.navbar-toggler {
+    position: relative;
+    z-index: 1031;
+    border: 1px solid rgba(11, 61, 36, 0.2);
 }
 
 .navbar .navbar-brand img {
-    max-height: 60px;
+    max-height: 56px;
+}
+
+.navbar .navbar-brand .brand-text {
+    font-size: 1.35rem;
+    line-height: 1.15;
+    color: var(--secondary);
+}
+
+.navbar .navbar-brand .brand-text small {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--primary);
 }
 
 .navbar .navbar-nav .nav-link {
-    margin-left: 25px;
+    margin-left: 18px;
     padding: 10px 0;
     color: #696E77;
     font-weight: 400;
@@ -122,6 +190,10 @@
 
     .navbar .nav-item .dropdown-menu {
         padding-left: 30px;
+    }
+
+    .navbar-collapse.show {
+        display: block;
     }
 }
 
@@ -156,13 +228,20 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: rgba(1, 10, 53, .8);
+    background: rgba(11, 61, 36, .8);
     z-index: 1;
+    pointer-events: none;
+}
+
+.carousel-caption a,
+.carousel-caption .btn {
+    pointer-events: auto;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
     width: 15%;
+    z-index: 5;
 }
 
 .carousel-control-prev-icon,
@@ -189,7 +268,7 @@
 }
 
 .page-header {
-    background: linear-gradient(rgba(1, 10, 53, .8), rgba(1, 10, 53, .8)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(11, 61, 36, .78), rgba(11, 61, 36, .78)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -206,11 +285,15 @@
 
 /*** Facts ***/
 .facts {
-    background: rgba(1, 10, 53, .8);
+    background: rgba(11, 61, 36, .8);
 }
 
 
 /*** Quote ***/
+.quote-section {
+    margin: 6rem 0;
+}
+
 @media (min-width: 992px) {
     .container.quote {
         max-width: 100% !important;
@@ -246,7 +329,7 @@
 }
 
 .container.quote .quote-text {
-    background: rgba(1, 10, 53, .8);
+    background: rgba(11, 61, 36, .8);
 }
 
 .container.quote .quote-form {
@@ -259,6 +342,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+
+/*** About ***/
+.about-img-offset {
+    margin-top: 25%;
 }
 
 
@@ -276,6 +365,29 @@
     max-height: 60px;
 }
 
+.service-item .service-icon i {
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+
+.service-item img.img-fluid {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.why-choose-item i {
+    font-size: 1.5rem;
+}
+
+.contact-cta a {
+    color: inherit;
+}
+
+.navbar .call-now {
+    white-space: nowrap;
+}
+
 
 /*** Team ***/
 .team-item .team-img::before,
@@ -286,7 +398,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(1, 10, 53, .8);
+    background: rgba(11, 61, 36, .8);
     transition: .5s;
 }
 
@@ -397,7 +509,11 @@
 
 /*** Footer ***/
 .footer {
-    color: #7F8499;
+    color: #fff;
+}
+
+.footer-logo {
+    max-height: 70px;
 }
 
 .footer .btn.btn-link {
@@ -405,7 +521,7 @@
     margin-bottom: 5px;
     padding: 0;
     text-align: left;
-    color: #7F8499;
+    color: #fff;
     font-weight: normal;
     text-transform: capitalize;
     transition: .3s;
@@ -452,49 +568,47 @@
 
 .whatsapp-button {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1;
-  }
-  
-  .whatsapp-button-image{
-    max-width: 120px;
-    animation: whatsapp-float 1s ease-in-out infinite,
-               whatsapp-glow 1s infinite;
-  }
-  
-  /* Floating animation */
-  @keyframes whatsapp-float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-6px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
-  /* Glow pulse effect */
-  @keyframes whatsapp-glow {
-    0% {
-      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
-    }
-    70% {
-      box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-    }
-  }
-  
-  @media (max-width: 430px) {
-    .whatsapp-button-image{
-      max-width: 85px;
-    }
+    right: 24px;
+    bottom: 24px;
+    left: auto;
+    z-index: 99;
+}
+
+.whatsapp-button a {
+    display: block;
+    line-height: 0;
+    text-decoration: none;
+    background: none;
+}
+
+.whatsapp-button-image {
+    display: block;
+    max-width: 90px;
+    height: auto;
+    animation: whatsapp-float 1s ease-in-out infinite, whatsapp-glow 1s infinite;
+}
+
+@keyframes whatsapp-float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes whatsapp-glow {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@media (max-width: 430px) {
     .whatsapp-button {
-      bottom: 10px; 
-      left: 10px;  
+        right: 14px;
+        bottom: 14px;
+        left: auto;
     }
-  }
+
+    .whatsapp-button-image {
+        max-width: 70px;
+    }
+}
+

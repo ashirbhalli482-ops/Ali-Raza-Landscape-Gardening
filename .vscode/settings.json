@@ -1,0 +1,6 @@
+{
+    "debug.javascript.defaultRuntimeExecutable": {
+        "pwa-chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+        "pwa-msedge": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+    }
+}
